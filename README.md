@@ -1,8 +1,14 @@
-[![DOI](https://zenodo.org/badge/1246520080.svg)](https://doi.org/10.5281/zenodo.20342426)
-![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
-![Python](https://img.shields.io/badge/python-3.9%2B-blue)
-Git Hub : https://github.com/Mallik-aps/MentalHealthRiskML
----
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20342427.svg)](https://doi.org/10.5281/zenodo.20342427)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Python](https://img.shields.io/badge/python-3.9%2B-blue.svg)
+
+# Mental Health Risk Prediction using Multimodal Machine Learning
+
+GitHub Repository:  
+https://github.com/Mallik-aps/MentalHealthRiskML
+
+Zenodo DOI:  
+https://doi.org/10.5281/zenodo.20342427
 
 # Mental Health Risk Prediction using Multimodal Machine Learning
 
