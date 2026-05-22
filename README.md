@@ -83,6 +83,7 @@ mental-health-risk-ml/
 │   └── reports/
 │
 └── tests/
+    ├── test_preprocessing.py
     ├── test_metrics.py
     └── test_data_validation.py
 ```
@@ -350,6 +351,13 @@ Outputs:
 
 ---
 
+# Output Directory
+
+Generated outputs are stored in:
+
+```text
+outputs/
+```
 
 ## Metrics
 
@@ -436,10 +444,11 @@ Potential future improvements include:
 
 # Citation
 
-```
-If you are using this repository or the corresponding research work, please cite the following paper:
+```bibtex
 @article{MentalHealthRiskML2026,
 title={A Multimodal Machine Learning Framework for Early Detection of Depression and Mental Disorders in Psychoactive Substance Users},
+author={Author Name},
+journal={Journal Name},
 year={2026}
 }
 ```
@@ -448,7 +457,10 @@ year={2026}
 
 # License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This repository is released under the MIT License.
+
+See the LICENSE file for details.
+
 ---
 
 # Acknowledgements
@@ -464,3 +476,23 @@ This implementation utilizes open-source scientific libraries including:
 - Matplotlib  
 
 ---
+
+# Contact
+
+For research collaborations, reproducibility discussions, or implementation support:
+
+- GitHub Issues  
+- Pull Requests  
+
+---
+
+# Final Notes
+
+This repository is intended for:
+
+- Research experimentation  
+- Academic benchmarking  
+- Explainable AI studies  
+- Mental health informatics research  
+
+It is NOT intended for direct clinical deployment without extensive external validation and regulatory approval.
