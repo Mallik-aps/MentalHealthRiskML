@@ -2,7 +2,7 @@
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue.svg)
 
-# Mental Health Risk Prediction using Multimodal Machine Learning
+
 
 GitHub Repository:  
 https://github.com/Mallik-aps/MentalHealthRiskML
