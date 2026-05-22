@@ -1,4 +1,4 @@
-[![DOI]https://zenodo.org/badge/1246520080.svg)](https://doi.org/10.5281/zenodo.20342426
+[![DOI](https://zenodo.org/badge/1246520080.svg)](https://doi.org/10.5281/zenodo.20342426)
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
 
