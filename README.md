@@ -1,3 +1,10 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19200650.svg)](https://doi.org/10.5281/zenodo.19200650)
+![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
+![Python](https://img.shields.io/badge/python-3.9%2B-blue)
+
+---
+
+# Mental Health Risk Prediction using Multimodal Machine Learning
 # Mental Health Risk Prediction using Multimodal Machine Learning
 
 ### A Comprehensive Explainable AI Framework for Early Detection of Depression and Common Mental Disorders Using Multimodal Clinical and Behavioral Data
