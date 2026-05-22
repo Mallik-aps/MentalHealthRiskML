@@ -5,7 +5,6 @@
 ---
 
 # Mental Health Risk Prediction using Multimodal Machine Learning
-# Mental Health Risk Prediction using Multimodal Machine Learning
 
 ### A Comprehensive Explainable AI Framework for Early Detection of Depression and Common Mental Disorders Using Multimodal Clinical and Behavioral Data
 
