@@ -1,86 +1,498 @@
-# Mental Health Risk ML
+# Mental Health Risk Prediction using Multimodal Machine Learning
 
-A complete, reproducible Python implementation for early detection of depression and common mental disorders (CMD) among psychoactive substance users using multimodal socio-demographic, substance-use, and PHQ-9/SRQ-20 clinical features.
+### A Comprehensive Explainable AI Framework for Early Detection of Depression and Common Mental Disorders Using Multimodal Clinical and Behavioral Data
 
-The implementation follows a leakage-safe design:
+---
 
-- imputation, encoding, scaling, outlier handling, and SMOTE are fitted only on training folds
-- stratified cross-validation is used for class-balanced evaluation
-- hyperparameter tuning is performed inside training folds
-- metrics are exported as CSV/JSON
-- SHAP/LIME interpretability and fairness subgroup reports are generated
+# Overview
 
-> This repository is for methodological research and baseline benchmarking only. It is not a clinical diagnostic system.
+This project presents a comprehensive multimodal machine learning framework for early detection of depression and common mental disorders (CMDs) among psychoactive substance users. The framework integrates socio-demographic, behavioral, and clinical assessment data using explainable AI, leakage-safe validation, baseline machine learning models, fairness analysis, and reproducible preprocessing pipelines for clinically interpretable mental health risk prediction.
 
-## Repository Structure
+The repository provides a fully reproducible research pipeline including:
+
+- Multimodal data integration  
+- Data preprocessing and quality assurance  
+- Synthetic data augmentation  
+- Leakage-safe stratified cross-validation  
+- Baseline machine learning models  
+- Explainable AI (SHAP + LIME)  
+- Fairness and bias evaluation  
+- Publication-quality visualizations  
+- Modular GitHub-ready architecture  
+
+---
+
+# Key Features
+
+- Multimodal feature fusion for mental health prediction  
+- Leakage-safe preprocessing and validation pipeline  
+- Baseline ML models:
+  - Logistic Regression
+  - Support Vector Machine (RBF)
+  - Random Forest
+  - XGBoost
+- Explainable AI using SHAP and LIME  
+- Fairness analysis across demographic subgroups  
+- Automated visualization and reporting  
+- Reproducible configuration-driven pipeline  
+
+---
+
+# Repository Structure
 
 ```text
-config/config.yaml                 Experiment settings
-data/raw/                           Optional real CSV files
-data/processed/                     Generated processed outputs
-src/                               Main source code
-notebooks/                         Lightweight starter notebooks
-outputs/metrics/                   Results CSV/JSON files
-outputs/figures/                   Evaluation and interpretation plots
-outputs/models/                    Saved fitted models
-tests/                             Basic tests
+mental-health-risk-ml/
+│
+├── README.md
+├── requirements.txt
+├── environment.yml
+├── LICENSE
+├── .gitignore
+│
+├── config/
+│   └── config.yaml
+│
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── synthetic/
+│
+├── src/
+│   ├── data_acquisition.py
+│   ├── synthetic_data_generator.py
+│   ├── preprocessing.py
+│   ├── validation.py
+│   ├── models.py
+│   ├── train_cv.py
+│   ├── evaluate.py
+│   ├── interpretability.py
+│   ├── fairness_analysis.py
+│   └── utils.py
+│
+├── notebooks/
+│   ├── 01_dataset_generation.ipynb
+│   ├── 02_preprocessing_pipeline.ipynb
+│   ├── 03_baseline_model_training.ipynb
+│   ├── 04_model_interpretability.ipynb
+│   └── 05_result_visualization.ipynb
+│
+├── outputs/
+│   ├── metrics/
+│   ├── figures/
+│   ├── models/
+│   └── reports/
+│
+└── tests/
+    ├── test_preprocessing.py
+    ├── test_metrics.py
+    └── test_data_validation.py
 ```
 
-## Quick Start
+---
+
+# Dataset Description
+
+The framework supports multimodal datasets containing:
+
+## 1. Socio-Demographic Features
+
+Examples:
+
+- Age  
+- Gender  
+- Education  
+- Occupation  
+- Marital status  
+
+---
+
+## 2. Behavioral / Substance Use Features
+
+Examples:
+
+- Substance type  
+- Frequency of use  
+- Duration of use  
+- Age of onset  
+- Polysubstance usage  
+
+---
+
+## 3. Clinical Assessment Features
+
+### PHQ-9
+
+Patient Health Questionnaire for depression severity.
+
+Range:
+
+```text
+0–27
+```
+
+### SRQ-20
+
+Self Reporting Questionnaire for CMD screening.
+
+Range:
+
+```text
+0–20
+```
+
+---
+
+# Methodology Pipeline
+
+## Step 1 — Data Acquisition
+
+The system integrates multimodal participant records from:
+
+- Clinical records  
+- Public mental health datasets  
+- Community surveys  
+- Synthetic augmentation procedures  
+
+---
+
+## Step 2 — Data Validation
+
+Validation checks include:
+
+- Duplicate removal  
+- Feature range verification  
+- Consistency rules  
+- Missing-value analysis  
+- Reliability testing  
+
+---
+
+## Step 3 — Data Preprocessing
+
+The preprocessing pipeline performs:
+
+- Missing value imputation  
+- Z-score normalization  
+- One-hot encoding  
+- Outlier handling  
+- SMOTE balancing  
+
+---
+
+## Step 4 — Leakage-Safe Cross Validation
+
+A strict stratified 5-fold cross-validation protocol is used.
+
+Important safeguards:
+
+- Preprocessing is applied ONLY to training folds  
+- Validation/test folds use learned parameters only  
+- SMOTE is performed only within training folds  
+
+This prevents:
+
+- Data leakage  
+- Target leakage  
+- Over-optimistic performance estimates  
+
+---
+
+## Step 5 — Model Training
+
+Implemented baseline models:
+
+| Model | Description |
+|---|---|
+| Logistic Regression | Linear interpretable classifier |
+| SVM (RBF) | Nonlinear kernel classifier |
+| Random Forest | Ensemble tree-based classifier |
+| XGBoost | Gradient boosting framework |
+
+---
+
+## Step 6 — Evaluation
+
+Evaluation metrics include:
+
+- Accuracy  
+- Precision  
+- Recall  
+- Specificity  
+- F1-score  
+- ROC-AUC  
+- PR-AUC  
+
+---
+
+## Step 7 — Explainability
+
+Implemented interpretability techniques:
+
+| Method | Purpose |
+|---|---|
+| SHAP | Global and local feature contribution |
+| LIME | Local explanation of predictions |
+| Feature Importance | Tree-based interpretability |
+
+---
+
+# Installation
+
+Clone repository
 
 ```bash
-python -m venv .venv
-# Windows: .venv\Scripts\activate
-source .venv/bin/activate
+git clone https://github.com/your-username/mental-health-risk-ml.git
 
+cd mental-health-risk-ml
+```
+
+---
+
+# Create Virtual Environment
+
+Using Conda
+
+```bash
+conda create -n mental-health python=3.10
+
+conda activate mental-health
+```
+
+---
+
+# Install Dependencies
+
+```bash
 pip install -r requirements.txt
-
-python src/synthetic_data_generator.py --config config/config.yaml
-python src/train_cv.py --config config/config.yaml
-python src/interpretability.py --config config/config.yaml
-python src/fairness_analysis.py --config config/config.yaml
 ```
 
-## Optional: Use Your Own Dataset
+Core dependencies:
 
-Place a CSV file at:
+- numpy  
+- pandas  
+- scikit-learn  
+- imbalanced-learn  
+- xgboost  
+- shap  
+- lime  
+- matplotlib  
+- seaborn  
+- joblib  
+- pyyaml  
+- pytest  
+
+---
+
+# Running the Project
+
+## 1. Generate Synthetic Dataset
+
+```bash
+python src/synthetic_data_generator.py
+```
+
+Generated dataset:
 
 ```text
-data/raw/real_multimodal_dataset.csv
+data/synthetic/
 ```
 
-The expected columns are:
+---
+
+## 2. Train Models
+
+```bash
+python src/train_cv.py
+```
+
+Outputs:
+
+- Trained models  
+- Cross-validation metrics  
+- ROC curves  
+- Evaluation reports  
+
+---
+
+## 3. Evaluate Models
+
+```bash
+python src/evaluate.py
+```
+
+---
+
+## 4. Run Interpretability Analysis
+
+```bash
+python src/interpretability.py
+```
+
+Generated outputs:
+
+- SHAP summary plots  
+- SHAP dependence plots  
+- Feature importance rankings  
+- LIME explanations  
+
+---
+
+## 5. Run Fairness Analysis
+
+```bash
+python src/fairness_analysis.py
+```
+
+Outputs:
+
+- Gender-wise evaluation  
+- Age-group analysis  
+- Education-group fairness metrics  
+
+---
+
+# Output Directory
+
+Generated outputs are stored in:
 
 ```text
-age, gender, education, occupation, marital_status,
-substance_type, frequency_use, duration_use, age_onset,
-phq1, phq2, phq3, phq4, phq5, phq6, phq7, phq8, phq9,
-srq1, ..., srq20,
-risk_label
+outputs/
 ```
 
-If `phq9_total` and `srq20_total` are not provided, they are computed automatically.
-
-## Main Outputs
-
-After running the pipeline, check:
+## Metrics
 
 ```text
-outputs/metrics/cv_metrics.csv
-outputs/metrics/cv_metrics_summary.csv
-outputs/metrics/best_params.json
-outputs/figures/model_comparison_auc.png
-outputs/figures/roc_curves.png
-outputs/figures/confusion_matrix_*.png
-outputs/figures/shap_summary_*.png
-outputs/figures/fairness_*.png
-outputs/models/best_*.joblib
+outputs/metrics/
 ```
 
-## Important Methodological Notes
+Contains:
 
-SMOTE is applied through `imblearn.Pipeline`, so synthetic samples are created only within training folds. Validation/test folds are transformed using preprocessing parameters learned from the training portion only.
+- CSV metric reports  
+- Fold-wise evaluation summaries  
 
-## License
+---
 
-MIT License.
+## Figures
+
+```text
+outputs/figures/
+```
+
+Contains:
+
+- ROC curves  
+- Confusion matrices  
+- SHAP plots  
+- Feature importance plots  
+- Fairness visualizations  
+
+---
+
+## Models
+
+```text
+outputs/models/
+```
+
+Contains serialized trained models:
+
+```text
+.joblib
+.pkl
+```
+
+---
+
+# Ethical and Data Governance Considerations
+
+This repository supports:
+
+- Anonymized data handling  
+- Synthetic augmentation  
+- Reproducible preprocessing  
+- Fairness analysis  
+- Transparent model explanations  
+
+No personally identifiable information should be included in uploaded datasets.
+
+---
+
+# Reproducibility
+
+The repository ensures reproducibility through:
+
+- Fixed random seeds  
+- Configuration-driven execution  
+- Version-controlled preprocessing  
+- Modular architecture  
+- Deterministic pipelines  
+
+---
+
+# Future Extensions
+
+Potential future improvements include:
+
+- Deep learning architectures  
+- Transformer-based multimodal fusion  
+- Temporal mental health prediction  
+- Federated learning integration  
+- Real-time clinical decision support  
+- Explainable deep neural networks  
+
+---
+
+# Citation
+
+```bibtex
+@article{MentalHealthRiskML2026,
+title={A Multimodal Machine Learning Framework for Early Detection of Depression and Mental Disorders in Psychoactive Substance Users},
+author={Author Name},
+journal={Journal Name},
+year={2026}
+}
+```
+
+---
+
+# License
+
+This repository is released under the MIT License.
+
+See the LICENSE file for details.
+
+---
+
+# Acknowledgements
+
+This implementation utilizes open-source scientific libraries including:
+
+- Scikit-learn  
+- XGBoost  
+- SHAP  
+- LIME  
+- Pandas  
+- NumPy  
+- Matplotlib  
+
+---
+
+# Contact
+
+For research collaborations, reproducibility discussions, or implementation support:
+
+- GitHub Issues  
+- Pull Requests  
+
+---
+
+# Final Notes
+
+This repository is intended for:
+
+- Research experimentation  
+- Academic benchmarking  
+- Explainable AI studies  
+- Mental health informatics research  
+
+It is NOT intended for direct clinical deployment without extensive external validation and regulatory approval.
