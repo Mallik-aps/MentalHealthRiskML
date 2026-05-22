@@ -1,0 +1,39 @@
+project:
+  name: mental-health-risk-ml
+  random_state: 42
+
+paths:
+  raw_dataset: data/raw/real_multimodal_dataset.csv
+  synthetic_dataset: data/synthetic/synthetic_multimodal_dataset.csv
+  processed_dataset: data/processed/integrated_dataset.csv
+  metrics_dir: outputs/metrics
+  figures_dir: outputs/figures
+  models_dir: outputs/models
+  reports_dir: outputs/reports
+
+data:
+  n_samples: 1240
+  synthetic_ratio: 0.25
+  high_risk_ratio: 0.38
+  use_real_if_available: true
+
+validation:
+  n_splits: 5
+  inner_cv: 3
+  test_size_holdout: 0.2
+
+preprocessing:
+  use_smote: true
+  smote_k_neighbors: 5
+  winsorize_outliers: true
+  iqr_multiplier: 1.5
+
+models:
+  logistic_regression: true
+  svm_rbf: true
+  random_forest: true
+  xgboost: true
+
+interpretability:
+  shap_sample_size: 250
+  lime_cases: 3
