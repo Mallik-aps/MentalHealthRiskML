@@ -7,8 +7,6 @@
 GitHub Repository:  
 https://github.com/Mallik-aps/MentalHealthRiskML
 
-Zenodo DOI:  
-https://doi.org/10.5281/zenodo.20342427
 
 # Mental Health Risk Prediction using Multimodal Machine Learning
 
